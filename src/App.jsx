@@ -1,10 +1,9 @@
+import RouterPrincipal from "./routers/RouterPrincipal"
 
 const App = () => {  
 
   return (
-    <h1>
-      From App
-    </h1>
+    <RouterPrincipal />
   )
 }
 
