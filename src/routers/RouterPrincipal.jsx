@@ -32,7 +32,10 @@ const RouterPrincipal = () => {
         <Route path='/contacto' element={<Contacto />} />
         <Route path='/persona/:nombre/:apellido' element={<Persona />} />
 
-        {/* Esta es cualquier ruta que no esta definida */}
+        {/* Para trabajar copn parametros por default / se duplica las URL */}
+        <Route path='/persona/:nombre/' element={<Persona />} />
+        <Route path='/persona/' element={<Persona />} />
+
         <Route path='*' element={<ErrorPage />} />
 
       </Routes>

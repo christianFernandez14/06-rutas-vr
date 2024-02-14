@@ -3,16 +3,19 @@ import { useParams } from "react-router-dom"
 
 const Persona = () => {
 
-  // Con este Hook, extraigo el parametro por la URL
   const parametros = useParams()
   const { nombre, apellido } = parametros
+  
+  // Como otra opcion en los paremetros por default, se lo asignas en la destructuracion
+  // const { nombre='Usuario', apellido='Apellido del Usuario' } = parametros
+  
 
-  console.log(parametros)
+  // console.log(parametros)
 
   return (
     <div>
-      <h1>Bienvenido {nombre} {apellido}</h1>
-      <p>Esta es la pagina de Persona</p>
+      <h1>Bienvenido; {!nombre ? 'Usuario' : nombre} {!apellido ? "" : apellido }</h1>
+      <p>Esta es la pagina es de Persona</p>
     </div>
   )
 }
