@@ -3,13 +3,13 @@ import { BrowserRouter, Routes, Route, NavLink, Link, Navigate } from 'react-rou
 import Inicio from '../components/Inicio'
 import Articulos from '../components/Articulos'
 import Contacto from '../components/Contacto'
-import ErrorPage from '../components/ErrorPage'
 import Persona from '../components/Persona'
-import PanelControl from '../components/PanelControl'
-import InicioPanel from '../components/panel/InicioPanel'
-import CrearPanel from '../components/panel/CrearPanel'
-import GestionPanel from '../components/panel/GestionPanel'
-import AcercaPanel from '../components/panel/AcercaPanel'
+import ErrorPage from '../components/ErrorPage'
+import PanelControl from "../components/PanelControl"
+import InicioPanel from "../components/panel/InicioPanel"
+import CrearPanel from "../components/panel/CrearPanel"
+import GestionPanel from "../components/panel/GestionPanel"
+import AcercaPanel from "../components/panel/AcercaPanel"
 
 const RouterPrincipal = () => {
   return (
@@ -45,16 +45,14 @@ const RouterPrincipal = () => {
         <Route path='/persona/' element={<Persona />} />
         <Route path='/redirigir' element={<Navigate to={'/persona'} />} />
 
-        {/* De esta manera creamos subrutas / sigues este parton puedes crear igual a las internas */}
         <Route path='/panel/*' element={<PanelControl />}>
+          {/* Si queremos poner una sub ruta domo default */}
+          <Route index element={<InicioPanel />} />
           <Route path='inicio' element={<InicioPanel />} />
           <Route path='crear-articulo' element={<CrearPanel />} />
           <Route path='gestion-usuario' element={<GestionPanel />} />
           <Route path='acerca-de' element={<AcercaPanel />} />
-
         </Route>
-
-
         <Route path='*' element={<ErrorPage />} />
 
       </Routes>
