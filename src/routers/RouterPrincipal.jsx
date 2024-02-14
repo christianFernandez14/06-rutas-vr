@@ -13,9 +13,8 @@ const RouterPrincipal = () => {
       <nav>
         <ul>
           <li>
-            {/* Revisar la diferencia entre Link y NavLink */}
-            {/* En este caso ambas funcionan para lo que quiero hacer */}
-            <Link to={'/inicio'}>Inicio</Link>
+            {/* Ya vi al menos una de la diferencias y es la creacion de una class atummatica*/}
+            <NavLink to={'/inicio'}>Inicio</NavLink>
           </li>
           <li>
             <NavLink to={'/articulos'}>Articulos</NavLink>
