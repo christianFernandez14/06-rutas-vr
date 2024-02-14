@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, NavLink, Link } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, NavLink, Link, Navigate } from 'react-router-dom'
 
 import Inicio from '../components/Inicio'
 import Articulos from '../components/Articulos'
@@ -18,7 +18,7 @@ const RouterPrincipal = () => {
             <NavLink to={'/inicio'}>Inicio</NavLink>
           </li>
           <li>
-            <NavLink to={'/articulos'}>Articulos</NavLink>
+            <Link to={'/articulos'}>Articulos</Link>
           </li>
           <li>
             <NavLink to={'/contacto'}>Contacto</NavLink>
@@ -31,10 +31,11 @@ const RouterPrincipal = () => {
         <Route path='/articulos' element={<Articulos />} />
         <Route path='/contacto' element={<Contacto />} />
         <Route path='/persona/:nombre/:apellido' element={<Persona />} />
-
-        {/* Para trabajar copn parametros por default / se duplica las URL */}
         <Route path='/persona/:nombre/' element={<Persona />} />
         <Route path='/persona/' element={<Persona />} />
+
+        {/* Usando un componente Navigate del Router-dom */}
+        <Route path='/redirigir' element={<Navigate to={'/persona'} />} />
 
         <Route path='*' element={<ErrorPage />} />
 
