@@ -4,6 +4,7 @@ import Inicio from '../components/Inicio'
 import Articulos from '../components/Articulos'
 import Contacto from '../components/Contacto'
 import ErrorPage from '../components/ErrorPage'
+import Persona from '../components/Persona'
 
 const RouterPrincipal = () => {
   return (
@@ -29,6 +30,8 @@ const RouterPrincipal = () => {
         <Route path='/inicio' element={<Inicio />} />
         <Route path='/articulos' element={<Articulos />} />
         <Route path='/contacto' element={<Contacto />} />
+        <Route path='/persona/:nombre/:apellido' element={<Persona />} />
+
         {/* Esta es cualquier ruta que no esta definida */}
         <Route path='*' element={<ErrorPage />} />
 
