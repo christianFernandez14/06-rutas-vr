@@ -3,7 +3,13 @@ import RouterPrincipal from "./routers/RouterPrincipal"
 const App = () => {  
 
   return (
-    <RouterPrincipal />
+    <div>
+      <h3>Cabecera</h3>
+      <hr />
+      <RouterPrincipal />
+      <hr />
+      <h3>footer</h3>
+    </div>
   )
 }
 
